@@ -1,0 +1,286 @@
+.btn,
+.button {
+
+	border: 0;
+	border-radius: 0;
+	font-family: inherit;
+	background-color: transparent;
+	transition: var(--transitionDefault);
+	cursor: pointer;
+	user-select: none;
+	position: relative;
+	font-size: 0;
+	color: transparent;
+	text-align: center;
+	white-space: nowrap;
+	display: block;
+
+	&:focus {
+
+		outline: none;
+
+	}
+
+	&:hover {
+
+		cursor: pointer;
+
+	}
+
+	&:disabled {
+
+		pointer-events: none;
+
+	}
+
+}
+
+.btn {
+
+	padding: 0 36px;
+	height: 72px;
+	font-size: 18px;
+	line-height: 72px;
+	font-weight: 600;
+	border-radius: 6px;
+
+	&--white {
+
+		color: var(--bg);
+		background-color: var(--color);
+
+	}
+
+	&--outline {
+
+		color: var(--color);
+		box-shadow: inset 0 0 0 1px var(--color);
+
+	}
+
+	&--small {
+
+		padding: 0 24px;
+		height: 44px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 44px;
+
+	}
+
+	&--label {
+
+		padding: 0 12px;
+		font-weight: 500;
+		font-size: 12px;
+		height: 32px;
+		line-height: 32px;
+
+	}
+
+	&--blue {
+
+		color: var(--color);
+		background-color: var(--blue);
+
+		@media ($desktop) {
+
+			&:hover {
+
+				background-color: var(--blue);
+
+			}
+
+		}
+
+	}
+
+}
+
+.input {
+
+	height: 50px;
+	line-height: 20px;
+
+	padding: 15px 0;
+
+	font-size: 16px;
+	color: var(--color);
+
+	width: 100%;
+	font-family: inherit;
+	position: relative;
+	appearance: none;
+	display: block;
+	filter: none;
+	-webkit-transform: translateZ(0px); /* FIX for iOS safari https://forum.ionicframework.com/t/ion-input-shows-only-the-first-entered-character-on-ios/73107/5 */
+
+	border: 0;
+	border-radius: 0;
+
+	border-bottom: 1px solid color(var(--color) a(20%));
+	background-color: transparent;
+
+	@media ($smWidth) {
+
+		height: 46px;
+		padding: 13px 0;
+
+	}
+
+	&::placeholder {
+
+		color: var(--color);
+		opacity: .3;
+
+		@media ($smWidth) {
+
+			font-size: 14px;
+
+		}
+
+	}
+
+	&::-ms-clear {
+
+		display: none;
+
+	}
+
+	@media ($desktop) {
+
+		&:hover {
+
+
+			&::placeholder {
+
+
+
+			}
+
+		}
+
+	}
+
+	&:focus {
+
+		outline: none;
+
+		&::placeholder {
+
+			opacity: .5;
+
+		}
+
+	}
+
+	&:disabled {
+
+		pointer-events: none;
+
+	}
+
+	&--error {
+
+		color: var(--error);
+
+	}
+
+	&:invalid {
+
+		box-shadow: none;
+
+	}
+
+}
+
+@keyframes autofill {
+
+	to {
+
+		color: var(--color);
+		background-color: #fff;
+
+	}
+
+}
+/*
+.checkbox {
+
+	display: block;
+	position: relative;
+	cursor: pointer;
+
+	font-size: 14px;
+	line-height: 20px;
+	color: var(--text);
+
+	&__input {
+
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		top: 0;
+		left: 0;
+		opacity: 0.001;
+		z-index: -1;
+		appearance: none;
+
+	}
+
+	&__label {
+
+		display: block;
+		padding: 2px 0 2px 36px;
+
+		&::before {
+
+			width: 22px;
+			height: 22px;
+			border-radius: 4px;
+			position: absolute;
+			background-color: #fff;
+			border: 1px solid var(--color);
+			top: 0;
+			left: 0;
+			content: '';
+
+		}
+
+		a {
+
+			text-decoration: underline;
+
+			@media ($desktop) {
+
+				&:hover {
+
+					text-decoration: none;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	@media ($desktop) {
+
+		&:hover &__label::before {
+
+
+
+		}
+
+	}
+
+	&__input[type="checkbox"]:checked + &__label::before {
+
+		background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5 11.379l6.895-6.895 1.06 1.06L7.502 13.5 2.728 8.727l1.06-1.06 3.713 3.712z' fill='%237B4865' stroke='%237B4865'/%3E%3C/svg%3E");
+		background-position: center;
+		background-repeat: no-repeat;
+
+	}
+
+} */

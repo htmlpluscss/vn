@@ -1,12 +1,6 @@
 .header {
 
-	padding: 50px 0;
-
-	@media ($mdWidth) {
-
-		padding: 30px 0;
-
-	}
+	padding: 40px 0;
 
 	&__box {
 
@@ -14,23 +8,35 @@
 		align-items: center;
 		justify-content: space-between;
 
-		@media ($smWidth) {
+	}
 
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
+	&__logo {
 
-		}
+		display: flex;
+		flex-grow: 1;
+		order: 2;
+		justify-content: center;
+
+	}
+
+	&__left,
+	&__right {
+
+		width: 256px;
+		display: flex;
+
+	}
+
+	&__left {
+
+		order: 1;
 
 	}
 
 	&__right {
 
-		@media ($smWidth) {
-
-			margin-top: 30px;
-
-		}
+		order: 3;
+		justify-content: flex-end;
 
 	}
 

@@ -2,10 +2,29 @@
 
 {% set description = "We are not selling tokens. We give it away for our community!" %}
 
+{% set preloadImage = [
+	{
+		media: "(max-width: 767px)",
+		img : "/img/first-screen/img--mobile@2x.webp"
+	},
+	{
+		media: "(min-width: 768px) and (max-width: 1199px)",
+		img : "/img/first-screen/img--tablet@2x.webp"
+	},
+	{
+		media: "(min-width: 1200px)",
+		img : "/img/first-screen/img.webp"
+	}
+] %}
+
 {% extends "template/base.html" %}
 
 {% block content %}
 
+{% include "main/first-screen.html" %}
 
+{% include "main/funded.html" %}
+
+{% include "main/percents.html" %}
 
 {% endblock %}

@@ -80,6 +80,7 @@ svg {
 
 	display: block;
 	position: relative;
+	transition: var(--transitionDefault);
 
 }
 

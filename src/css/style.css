@@ -2,10 +2,11 @@
 @import url(variables.css);
 @import url(media.css);
 @import url(default.css);
+@import url(form.css);
 
 @import url(header.css);
-/* @import url(footer.css); */
 
 @import url(social.css);
 
-/* @import url(page.css); */
+@import url(first-screen.css);
+@import url(funded.css);
