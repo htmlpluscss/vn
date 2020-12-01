@@ -1,0 +1,17 @@
+:root {
+
+	--color: #fff;
+	--text: #b3b3b3;
+	--green: #00c98d;
+	--blue: #4770ff;
+	--red: #fc1655;
+	--error: #fc1655;
+	--bg: #121212;
+	--gray: #2c2c2c;
+
+}
+
+$desktop: (min-width: 1200px);
+$mdWidth: (max-width: 1199px);
+$smWidth: (max-width: 719px);
+$xsWidth: (max-width: 359px);

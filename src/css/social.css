@@ -1,0 +1,85 @@
+.social {
+
+	display: flex;
+
+	@media ($smWidth) {
+
+		justify-content: center;
+		margin: -15px;
+
+	}
+
+	@media ($xsWidth) {
+
+		margin: -10px;
+
+	}
+
+	&__item {
+
+		margin-left: 29px;
+
+		@media ($smWidth) {
+
+			margin: 15px;
+
+		}
+
+		@media ($xsWidth) {
+
+			margin: 10px;
+
+		}
+
+	}
+
+	&__link {
+
+		display: block;
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+
+		&:hover {
+
+			background-color: #1D1E1C;
+
+		}
+
+		@media ($smWidth) {
+
+			width: 36px;
+			height: 36px;
+
+		}
+
+	}
+
+	&__name {
+
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 15px;
+		text-align: center;
+		color: #9b9b9b;
+		position: absolute;
+		left: -14px;
+		right: -14px;
+		bottom: -25px;
+
+	}
+
+	svg {
+
+		fill: var(--color);
+
+		@media ($smWidth) {
+
+			width: 36px;
+			height: 36px;
+
+		}
+
+	}
+
+}
