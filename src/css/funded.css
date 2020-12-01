@@ -3,6 +3,7 @@
 	padding: 132px 0;
 	background-color: var(--gray);
 	border-radius: 12px;
+	margin: 36px;
 
 	&__box {
 
