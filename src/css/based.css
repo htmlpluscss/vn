@@ -1,12 +1,13 @@
 .based {
 
-	padding: 122px 0;
+	padding: 132px 0;
 
 	&__box {
 
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		padding-right: 72px;
 
 	}
 
@@ -22,7 +23,7 @@
 
 		width: 448px;
 		position: relative;
-		padding-top: 44px;
+		padding-top: 54px;
 
 		p {
 
@@ -36,7 +37,7 @@
 	&__label {
 
 		position: absolute;
-		top: 0;
+		top: 10px;
 		left: 0;
 		pointer-events: none;
 
@@ -45,16 +46,28 @@
 	&__btn {
 
 		display: flex;
-		opacity: .5;
+
+		.btn {
+
+			opacity: .5;
+
+			@media ($desktop) {
+
+				&:hover {
+
+					opacity: 1;
+
+				}
+
+			}
+
+		}
 
 	}
 
 	&__img {
 
 		position: relative;
-		width: 396px;
-		outline:1px solid red;
-		height: 560px;
 
 		img {
 

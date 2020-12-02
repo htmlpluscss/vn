@@ -99,6 +99,85 @@
 
 	}
 
+	.swiper-controls {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+
+	}
+
+	.swiper-navigation {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: space-between;
+
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+
+		z-index: 2;
+		position: relative;
+
+		width: 24px;
+		height: 24px;
+
+		svg {
+
+			fill: var(--color);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+
+		}
+
+		&.swiper-button-disabled {
+
+			pointer-events: none;
+
+			svg {
+
+				opacity: 0.5;
+
+			}
+
+		}
+
+		@media ($desktop) {
+
+			&:hover {
+
+				svg {
+
+					opacity: .3;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	.swiper-button-prev {
+
+
+	}
+
+	.swiper-button-next {
+
+
+	}
+
 	.swiper-pagination {
 
 		transition: 300ms opacity;

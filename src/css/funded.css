@@ -3,7 +3,7 @@
 	padding: 132px 0;
 	background-color: var(--gray);
 	border-radius: 12px;
-	margin: 36px;
+	margin: 0 36px;
 
 	&__box {
 
@@ -11,6 +11,7 @@
 		justify-content: space-between;
 		align-items: center;
 		flex-direction: row-reverse;
+		padding-right: 60px;
 
 	}
 
@@ -42,6 +43,10 @@
 
 				display: inline;
 				fill: var(--green);
+				stroke: var(--green);
+				vertical-align: middle;
+				left: 8px;
+				top: -1px;
 
 			}
 
@@ -52,9 +57,6 @@
 	&__img {
 
 		position: relative;
-		width: 396px;
-		outline:1px solid red;
-		height: 560px;
 
 		img {
 

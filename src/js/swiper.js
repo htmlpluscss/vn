@@ -14,15 +14,30 @@
 			toggleSwipe = null,
 			resetSwipe = null;
 
-		const swipeNav = document.createElement('div'),
-			  processStep = swipe.classList.contains('swiper-container--process');
+		const swipeControls = document.createElement('div'),
+			swipeNav = document.createElement('div'),
+			swipeBtns = document.createElement('div'),
+			swipeNext = document.createElement('button'),
+			swipePrev = document.createElement('button'),
+			items = swipe.querySelectorAll('.swiper-slide'),
+			count = items.length,
+			firstScreen = swipe.classList.contains('swiper-container--first-screen');
 
 		swipeNav.className = 'swiper-pagination';
+		swipeControls.className = 'swiper-controls';
 
-		swipe.appendChild(swipeNav);
+		swipeBtns.className = 'swiper-navigation';
+		swipePrev.className = 'swiper-button-prev button';
+		swipeNext.className = 'swiper-button-next button';
 
-		// eager
-		Array.from(swipe.querySelectorAll('[loading="lazy"]'), img => img.setAttribute('loading','eager'));
+		swipePrev.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24"><path d="M21.75 10.88H5.81l7.55-7.56L12.03 2l-9.8 9.81 9.8 9.81 1.33-1.32-7.55-7.54h15.94v-1.88z"/></svg>';
+		swipeNext.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24"><path d="M2.25 10.88h15.94l-7.55-7.56L11.97 2l9.8 9.81-9.8 9.81-1.33-1.32 7.55-7.54H2.25v-1.88z"/></svg>';
+
+		swipeBtns.appendChild(swipePrev);
+		swipeBtns.appendChild(swipeNext);
+		swipeControls.appendChild(swipeBtns);
+		swipeControls.appendChild(swipeNav);
+		swipe.parentNode.appendChild(swipeControls);
 
 		resetSwipe = () => {
 
@@ -33,80 +48,29 @@
 
 			}
 
+			swipeNav.classList.add('hide');
+			swipeBtns.classList.add('hide');
+
 		}
 
-		if (processStep) {
+		resetSwipe();
 
-			let inViewport = true;
+		if (firstScreen) {
 
-			if ('IntersectionObserver' in window) {
-
-				const options = {
-					root: null,
-					rootMargin: '0px',
-					threshold: [0.3]
-				};
-
-				const callback = (entries, observer) => {
-
-					Array.prototype.forEach.call(entries, (entry) => {
-
-						inViewport = entry.isIntersecting;
-
-					});
-
-				};
-
-				const observer = new IntersectionObserver(callback, options);
-
-				observer.observe(document.querySelector('.process__right'));
-
-			}
-
-			const current = swipe.querySelector('.process__swiper-current'),
-				  total = swipe.querySelectorAll('.swiper-slide').length,
-				  processBtn = document.querySelectorAll('.process__btn'),
-				  circle = document.querySelector('.process__btn.is-active circle'),
-				  pi2r = parseInt(circle.getAttribute('r')) * 2 * Math.PI;
-
-			let idTimer = null;
-
-			const Circle = (btn, circle) => {
-
-				btn.classList.add('is-active');
-
-				let count = 0;
-
-				idTimer = setInterval( () => {
-
-					if(count === 100) {
-
-						swipe.swiper.slideNext();
-
-					}
-
-					if(inViewport) {
-
-						count++;
-
-					}
-
-					circle.setAttribute('stroke-dasharray', pi2r / 100 * count + ' ' + pi2r);
-
-				}, 50);
-
-			}
+			swipeControls.classList.add('center');
 
 			toggleSwipe = () => {
 
 				resetSwipe();
 
-				if(window.innerWidth < 1200) {
+				if(window.innerWidth < 768) {
+/*
+
+					swipeNav.classList.remove('hide');
 
 					mySwipe = new Swiper(swipe, {
 						loop: true,
 						autoHeight: true,
-						preloadImages: false,
 						pagination: {
 							el: swipeNav,
 							clickable: true,
@@ -114,65 +78,24 @@
 							bulletClass: 'button',
 							bulletActiveClass: 'is-active'
 						},
-						on: {
-							slideChangeTransitionEnd: () => {
-								current.textContent = (swipe.swiper.realIndex % total + 1);
-							}
+						navigation: {
+							nextEl: swipeNext,
+							prevEl: swipePrev
 						}
-					});
+					});*/
 
-				} else {
+				}
+				else {
+
+					swipeBtns.classList.remove('hide');
 
 					mySwipe = new Swiper(swipe, {
-						preloadImages: false,
-						direction: 'vertical',
 						loop: true,
-						on: {
-							init: () => {
-
-								Array.from(processBtn, (btn,index) =>
-									btn.addEventListener('click', () =>
-										swipe.swiper.slideToLoop(index)));
-
-								Circle(processBtn[0],circle);
-
-							},
-							slideChangeTransitionEnd: () => {
-
-								clearInterval(idTimer);
-
-								Array.from(processBtn, (btn,index) => {
-
-									const old = index < swipe.swiper.realIndex,
-										  circle = btn.querySelector('circle');
-
-									if(index === swipe.swiper.realIndex % total) {
-
-										Circle(btn,circle);
-
-									}
-									else {
-
-										if(old) {
-
-											btn.classList.add('is-active');
-											circle.setAttribute('stroke-dasharray', '0 0');
-
-										}
-										else {
-
-											btn.classList.remove('is-active');
-
-										}
-
-									}
-
-								});
-
-							}
+						navigation: {
+							nextEl: swipeNext,
+							prevEl: swipePrev
 						}
 					});
-
 
 				}
 
@@ -182,7 +105,7 @@
 
 		PubSub.subscribe('windowWidthResize', () => {
 
-			if (window.Swiper) {
+			if (window.Swiper && toggleSwipe) {
 
 				toggleSwipe();
 
@@ -190,7 +113,16 @@
 
 		});
 
-		PubSub.subscribe('swiperJsLoad', toggleSwipe);
+		if(window.Swiper && toggleSwipe) {
+
+			toggleSwipe();
+
+		}
+		else {
+
+			PubSub.subscribe('swiperJsLoad', toggleSwipe);
+
+		}
 
 		if(!swiperInit) {
 
@@ -203,7 +135,7 @@
 
 			script.onload = () => PubSub.publish('swiperJsLoad');
 
-			setTimeout( () => document.head.appendChild(script), window.pageYOffset === 0 ? 70 : 100);
+			document.head.appendChild(script);
 
 		}
 
