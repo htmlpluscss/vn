@@ -114,13 +114,11 @@ gulp.task('css', function () {
 
 });
 
-gulp.task('babel', function() {
+gulp.task('js', function() {
 
-	return gulp.src(['src/js/js.js','src/js/*.js','!src/js/*.min.js'], {since: gulp.lastRun('babel')})
-		.pipe(debug({title: 'babel'}))
+	return gulp.src(['src/js/js.js','src/js/*.js'])
 		.pipe(sourcemaps.init())
-		.pipe(remember('babel'))
-		.pipe(concat('_js.js'))
+		.pipe(concat('scripts.js'))
 		.pipe(babel({
 			presets: ['@babel/env']
 		}))
@@ -134,38 +132,6 @@ gulp.task('babel', function() {
 		.pipe(gulp.dest('build/js/'))
 
 });
-
-gulp.task('min', function() {
-
-	return gulp.src(['src/js/min/*.js','!src/js/min/swiper.min.js'])
-		.pipe(debug({title: 'min'}))
-		.pipe(gulpif(
-			function(file){
-				return !(/min$/.test(file.stem));
-			},
-			minify({
-				noSource: true
-			})
-		))
-		.pipe(concat('_min.js'))
-		.pipe(gulp.dest('build/js'))
-
-});
-
-gulp.task('concat', function() {
-
-	gulp.src(['build/js/_min.js','build/js/_js.js'])
-		.pipe(concat('scripts.js'))
-		.pipe(gulp.dest('build/js'));
-
-	return gulp.src(['build/js/_min.js','build/js/_js.min.js'])
-		.pipe(concat('scripts.min.js'))
-//		.pipe(gulp.dest('src/js'))
-		.pipe(gulp.dest('build/js'))
-
-});
-
-gulp.task('js', gulp.series('babel','min','concat'));
 
 gulp.task('serve', function() {
 
@@ -221,26 +187,15 @@ gulp.task('ftp', function () {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(['src/js/*.*','!src/js/scripts.min.js'], gulp.series('js'));
-	gulp.watch(['src/css/*.*','!src/css/styles.min.css'], gulp.series('css'));
+	gulp.watch('src/js/*.*', gulp.series('js'));
+	gulp.watch('src/css/*.*', gulp.series('css'));
 	gulp.watch('src/**/*.html', gulp.series('html'));
 	gulp.watch(['src/**/*.*', '!src/**/*.{css,html,js}'], gulp.series('copy'));
 	gulp.watch('build/**/*.*', gulp.series('ftp'));
 });
 
-gulp.task('copy-js', function() {
-
-// big scripts
-	return gulp.src([
-		'src/js/min/swiper.min.js',
-		])
-		.pipe(gulp.dest('build/js'));
-
-});
-
 gulp.task('default', gulp.series(
 	'clear',
-	'copy-js',
 	'css',
 	'js',
 	'html',
