@@ -27,25 +27,31 @@
 		position: absolute;
 		top: 36px;
 		right: 36px;
-		font-size: 18px;
-		line-height: 24px;
-		color: #B3B3B3;
-		padding-left: 36px;
+		display: flex;
+		justify-content: center;
+
+		.button {
+
+			font-size: 18px;
+			line-height: 24px;
+			color: #B3B3B3;
+			padding-left: 36px;
+
+			svg {
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				fill: #B3B3B3;
+
+			}
+
+		}
 
 		@media ($mdWidth) {
 
 			left: 36px;
-			margin: auto;
 			top: 30px;
-
-		}
-
-		svg {
-
-			position: absolute;
-			top: 0;
-			left: 0;
-			fill: #B3B3B3;
 
 		}
 
