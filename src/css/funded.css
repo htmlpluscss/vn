@@ -34,23 +34,11 @@
 
 		}
 
-		a {
+	}
 
-			font-weight: 600;
-			color: var(--green);
+	&__btn {
 
-			svg {
-
-				display: inline;
-				fill: var(--green);
-				stroke: var(--green);
-				vertical-align: middle;
-				left: 8px;
-				top: -1px;
-
-			}
-
-		}
+		display: flex;
 
 	}
 

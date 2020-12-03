@@ -47,22 +47,6 @@
 
 		display: flex;
 
-		.btn {
-
-			opacity: .5;
-
-			@media ($desktop) {
-
-				&:hover {
-
-					opacity: 1;
-
-				}
-
-			}
-
-		}
-
 	}
 
 	&__img {
