@@ -9,6 +9,19 @@
 
 	}
 
+	&--dark &__link {
+
+		color: var(--color);
+		background-color: var(--gray);
+
+		svg {
+
+			fill: var(--color);
+
+		}
+
+	}
+
 	&__link {
 
 		display: block;
@@ -36,6 +49,12 @@
 
 
 			}
+
+		}
+
+		&.button {
+
+			background-color: var(--blue);
 
 		}
 
