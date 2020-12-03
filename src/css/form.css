@@ -129,6 +129,13 @@
 
 	background-color: var(--gray);
 
+	textarea& {
+
+		resize: none;
+		overflow: auto;
+
+	}
+
 	&::placeholder {
 
 		color: #b3b3b3;

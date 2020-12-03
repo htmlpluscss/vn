@@ -11,6 +11,13 @@ html {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
+	scroll-behavior: smooth;
+
+	&.scroll-behavior-off {
+
+		scroll-behavior: auto;
+
+	}
 
 }
 
