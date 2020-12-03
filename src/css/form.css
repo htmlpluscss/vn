@@ -127,7 +127,7 @@
 	border: 0;
 	border-radius: 6px;
 
-	background-color: #2c2c2c;
+	background-color: var(--gray);
 
 	&::placeholder {
 
@@ -146,7 +146,7 @@
 
 		&:hover {
 
-			background-color: color(#2c2c2c a(70%));
+			background-color: color(var(--gray) a(70%));
 
 			&::placeholder {
 
@@ -159,7 +159,7 @@
 	&:focus {
 
 		outline: none;
-		background-color: color(#2c2c2c a(70%));
+		background-color: color(var(--gray) a(70%));
 
 		&::placeholder {
 
