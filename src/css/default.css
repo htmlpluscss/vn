@@ -3,7 +3,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-color: red !important;
+
 }
 
 html {
@@ -44,9 +44,6 @@ body {
 		min-height: 100vh;
 
 	}
-
-background-image: url(/css/mobile.png);
-background-position: top;
 
 	@media ($smWidth) {
 

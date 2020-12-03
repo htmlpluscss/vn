@@ -6,7 +6,14 @@
 	@media ($smWidth) {
 
 		padding: 20px 0;
-		margin-bottom: 46px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #414141;
+
+		.center {
+
+			width: 100%;
+
+		}
 
 		.btn {
 

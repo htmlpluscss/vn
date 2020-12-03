@@ -6,6 +6,19 @@
 	text-align: center;
 	margin: 0 36px 36px;
 
+	@media ($smWidth) {
+
+		margin: 10px;
+		padding: 30px 10px 10px;
+
+		.center {
+
+			padding: 0;
+
+		}
+
+	}
+
 	&__border {
 
 		border: 1px solid rgba(255, 255, 255, .12);
@@ -13,6 +26,21 @@
 		pointer-events: none;
 		padding: 48px;
 		position: relative;
+
+		@media ($smWidth) {
+
+			padding: 20px;
+
+			&::after {
+
+				top: 36px;
+				left: 10px;
+				right: 10px;
+				bottom: 10px;
+
+			}
+
+		}
 
 		&::after {
 
@@ -46,6 +74,17 @@
 		color: var(--bg);
 		background-color: var(--color);
 
+		@media ($smWidth) {
+
+			font-size: 14px;
+			width: 145px;
+			height: 60px;
+			line-height: 40px;
+			border-width: 10px;
+			top: -30px;
+
+		}
+
 	}
 
 	&__title {
@@ -59,12 +98,25 @@
 
 			font-size: 36px;
 			line-height: 48px;
+			margin: 30px 0 20px;
 
 		}
 
 	}
 
 	&__content {
+
+		@media ($smWidth) {
+
+			margin: 10px;
+
+			br {
+
+				display: none;
+
+			}
+
+		}
 
 		p {
 
@@ -93,6 +145,17 @@
 		font-size: 14px;
 		line-height: 20px;
 		white-space: nowrap;
+
+		@media ($smWidth) {
+
+			height: 10px;
+			border-radius: 2px;
+			margin: 50px -10px;
+			font-size: 12px;
+			width: auto;
+			max-width: none;
+
+		}
 
 		&-start {
 
@@ -141,6 +204,12 @@
 			border-radius: 4px 0 0 4px;
 			background-color: color(var(--green) a(30%));
 
+			@media ($smWidth) {
+
+				border-radius: 2px 0 0 2px;
+
+			}
+
 			&-value {
 
 				line-height: 32px;
@@ -150,6 +219,15 @@
 				top: -10px;
 				right: -32px;
 				background-color: var(--red);
+
+				@media ($smWidth) {
+
+					width: 56px;
+					line-height: 24px;
+					top: -7px;
+					right: -28px;
+
+				}
 
 			}
 
@@ -162,6 +240,13 @@
 		display: flex;
 		justify-content: center;
 		margin: 60px 0 48px;
+
+		@media ($smWidth) {
+
+			margin: 54px 0 26px;
+			justify-content: space-between;
+
+		}
 
 		&-item {
 
@@ -177,6 +262,13 @@
 
 			}
 
+			@media ($smWidth) {
+
+				width: auto;
+				border: 0;
+
+			}
+
 		}
 
 		&-key {
@@ -185,6 +277,12 @@
 			font-weight: 400;
 			line-height: 20px;
 			opacity: .5;
+
+			@media ($smWidth) {
+
+				font-size: 12px;
+
+			}
 
 		}
 
@@ -195,6 +293,13 @@
 			line-height: 20px;
 			margin-bottom: 12px;
 
+			@media ($smWidth) {
+
+				font-size: 16px;
+				margin-bottom: 5px;
+
+			}
+
 		}
 
 	}
@@ -204,6 +309,12 @@
 		display: flex;
 		justify-content: center;
 		margin: 36px 0;
+
+		@media ($smWidth) {
+
+			margin: 26px 0 20px;
+
+		}
 
 		.btn {
 
@@ -221,6 +332,13 @@
 		margin: 2px auto;
 		width: 330px;
 		max-width: 100%;
+
+		@media ($smWidth) {
+
+			font-size: 12px;
+			margin-bottom: 36px;
+
+		}
 
 		a {
 

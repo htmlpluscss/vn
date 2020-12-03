@@ -2,6 +2,12 @@
 
 	margin-top: 60px;
 
+	@media ($smWidth) {
+
+		margin-top: 50px;
+
+	}
+
 }
 
 .copyright {
@@ -12,5 +18,11 @@
 	text-align: center;
 	color: #B3B3B3;
 	opacity: 0.4;
+
+	@media ($smWidth) {
+
+		margin: 30px;
+
+	}
 
 }
