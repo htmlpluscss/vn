@@ -140,6 +140,13 @@
 
 	background-color: var(--gray);
 
+	@media ($smWidth) {
+
+		height: 70px;
+		padding: 25px 24px;
+
+	}
+
 	textarea& {
 
 		resize: none;

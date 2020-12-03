@@ -10,6 +10,12 @@
 	align-items: center;
 	padding: 72px;
 
+	@media ($mdWidth) {
+
+		padding: 80px 40px;
+
+	}
+
 	&__item {
 
 		position: relative;
@@ -25,6 +31,14 @@
 		line-height: 24px;
 		color: #B3B3B3;
 		padding-left: 36px;
+
+		@media ($mdWidth) {
+
+			left: 36px;
+			margin: auto;
+			top: 30px;
+
+		}
 
 		svg {
 
@@ -49,7 +63,10 @@
 
 	.wrapper {
 
-		flex-grow: 0;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
 
 	}
 
@@ -63,10 +80,6 @@
 
 	.footer {
 
-		position: fixed;
-		left: 0;
-		right: 0;
-		bottom: 0;
 		margin: 0;
 
 	}
@@ -76,7 +89,12 @@
 .modal-form {
 
 	width: 772px;
-	max-width: 100%;
+
+	@media ($mdWidth) {
+
+		width: 100%;
+
+	}
 
 	&__title {
 
@@ -87,6 +105,14 @@
 		text-align: center;
 		color: #B3B3B3;
 
+		@media ($mdWidth) {
+
+			font-size: 24px;
+			line-height: 36px;
+			margin-bottom: 20px;
+
+		}
+
 	}
 
 	&__fieldset {
@@ -94,11 +120,24 @@
 		display: flex;
 		justify-content: space-between;
 
+		@media ($mdWidth) {
+
+			display: block;
+
+		}
+
 	}
 
 	&__col {
 
 		width: 376px;
+
+		@media ($mdWidth) {
+
+			width: auto;
+			margin-top: 20px;
+
+		}
 
 	}
 
@@ -106,11 +145,23 @@
 
 		margin-top: 24px;
 
+		@media ($mdWidth) {
+
+			margin-top: 20px;
+
+		}
+
 	}
 
 	textarea {
 
 		height: 300px;
+
+		@media ($mdWidth) {
+
+			height: 140px;
+
+		}
 
 	}
 
@@ -118,6 +169,13 @@
 
 		margin: 36px auto;
 		width: 376px;
+
+		@media ($mdWidth) {
+
+			width: 100%;
+			margin: 40px 0;
+
+		}
 
 	}
 

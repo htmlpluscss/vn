@@ -2,7 +2,7 @@
 
 	margin: 36px 0 132px;
 
-	@media ($smWidth) {
+	@media ($mdWidth) {
 
 		margin: 40px 0 60px;
 
@@ -16,7 +16,7 @@
 		flex-direction: row-reverse;
 		padding-right: 72px;
 
-		@media ($smWidth) {
+		@media ($mdWidth) {
 
 			display: block;
 			padding: 0;
@@ -31,7 +31,7 @@
 		font-weight: 500;
 		line-height: 60px;
 
-		@media ($smWidth) {
+		@media ($mdWidth) {
 
 			font-size: 36px;
 			line-height: 48px;
@@ -43,15 +43,20 @@
 	&__content {
 
 		width: 448px;
-		max-width: 100%;
 		position: relative;
+
+		@media ($mdWidth) {
+
+			width: 100%;
+
+		}
 
 		p {
 
 			color: var(--text);
 			margin: 36px 0;
 
-			@media ($smWidth) {
+			@media ($mdWidth) {
 
 				margin: 20px 0 30px;
 
@@ -66,7 +71,7 @@
 		display: flex;
 		margin: 12px 0;
 
-		@media ($smWidth) {
+		@media ($mdWidth) {
 
 			margin: 30px 0 10px;
 
@@ -88,7 +93,7 @@
 
 			border-radius: 12px;
 
-			@media ($smWidth) {
+			@media ($mdWidth) {
 
 				width: 100%;
 				height: 240px;
@@ -110,7 +115,7 @@
 			opacity: 0.2;
 			border-radius: 20px;
 
-			@media ($smWidth) {
+			@media ($mdWidth) {
 
 				display: none;
 

@@ -3,7 +3,7 @@
 	margin: 36px 0;
 	padding: 60px 0;
 
-	@media ($smWidth) {
+	@media ($mdWidth) {
 
 		margin: 40px 0;
 		padding: 20px 0;
@@ -45,10 +45,12 @@
 		padding: 36px;
 		border-radius: 12px;
 		background-color: var(--color);
+		margin-left: 20px;
 
 		@media ($smWidth) {
 
 			width: 100%;
+			margin-left: 0;
 			margin-top: 20px;
 
 		}
@@ -62,6 +64,12 @@
 		p {
 
 			color: var(--bg);
+
+			@media ($mdWidth) {
+
+				margin: 12px 0 20px;
+
+			}
 
 			@media ($smWidth) {
 
@@ -81,7 +89,7 @@
 		color: var(--bg);
 		text-align: center;
 
-		@media ($smWidth) {
+		@media ($mdWidth) {
 
 			font-size: 24px;
 			line-height: 36px;

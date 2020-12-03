@@ -133,11 +133,16 @@
 
 			border-radius: 16px;
 
+			@media ($mdWidth) {
+
+				max-width: 100%;
+				height: auto;
+
+			}
+
 			@media ($smWidth) {
 
 				border-radius: 6px;
-				max-width: 100%;
-				height: auto;
 
 			}
 

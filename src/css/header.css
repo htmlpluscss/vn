@@ -3,10 +3,8 @@
 	padding: 25px 0;
 	margin-bottom: 46px;
 
-	@media ($smWidth) {
+	@media ($mdWidth) {
 
-		padding: 20px 0;
-		margin-bottom: 20px;
 		border-bottom: 1px solid #414141;
 
 		.center {
@@ -14,6 +12,13 @@
 			width: 100%;
 
 		}
+
+	}
+
+	@media ($smWidth) {
+
+		padding: 20px 0;
+		margin-bottom: 20px;
 
 		.btn {
 
