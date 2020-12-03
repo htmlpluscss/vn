@@ -55,6 +55,13 @@
 		line-height: 60px;
 		margin: 22px 0;
 
+		@media ($smWidth) {
+
+			font-size: 36px;
+			line-height: 48px;
+
+		}
+
 	}
 
 	&__content {

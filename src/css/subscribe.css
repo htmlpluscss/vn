@@ -3,10 +3,23 @@
 	margin: 36px 0;
 	padding: 60px 0;
 
+	@media ($smWidth) {
+
+		margin: 40px 0;
+		padding: 20px 0;
+
+	}
+
 	&__box {
 
 		display: flex;
 		justify-content: space-between;
+
+		@media ($smWidth) {
+
+			display: block;
+
+		}
 
 	}
 
@@ -17,6 +30,13 @@
 		padding: 36px;
 		background-color: var(--color);
 
+		@media ($smWidth) {
+
+			width: 100%;
+			padding: 20px;
+
+		}
+
 	}
 
 	&__telegram {
@@ -25,6 +45,14 @@
 		padding: 36px;
 		border-radius: 12px;
 		background-color: var(--color);
+
+		@media ($smWidth) {
+
+			width: 100%;
+			padding: 20px;
+			margin-top: 20px;
+
+		}
 
 		svg {
 
@@ -48,6 +76,13 @@
 		color: var(--bg);
 		text-align: center;
 
+		@media ($smWidth) {
+
+			font-size: 24px;
+			line-height: 36px;
+
+		}
+
 	}
 
 	&__text {
@@ -59,6 +94,13 @@
 		color: var(--gray);
 		opacity: 0.78;
 		margin: 12px 0 30px;
+
+		@media ($smWidth) {
+
+			font-size: 16px;
+			line-height: 1.5;
+
+		}
 
 	}
 

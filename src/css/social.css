@@ -3,6 +3,43 @@
 	display: flex;
 	justify-content: center;
 
+	&--wrap {
+
+		@media ($smWidth) {
+
+			flex-wrap: wrap;
+			margin: -5px;
+
+			.social__item {
+
+				margin: 5px;
+
+			}
+
+		}
+
+	}
+
+	&--scroll {
+
+		@media ($smWidth) {
+
+			justify-content: flex-start;
+			overflow-x: auto;
+			padding: 14px;
+
+			&::after {
+
+				width: 14px;
+				content: '';
+				flex-shrink: 0;
+
+			}
+
+		}
+
+	}
+
 	&__item {
 
 		margin: 0 6px;
