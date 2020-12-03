@@ -1,6 +1,6 @@
 .based {
 
-	padding: 132px 0;
+	margin: 96px 0 132px;
 
 	&__box {
 
@@ -23,7 +23,6 @@
 
 		width: 448px;
 		position: relative;
-		padding-top: 54px;
 
 		p {
 
@@ -36,10 +35,8 @@
 
 	&__label {
 
-		position: absolute;
-		top: 10px;
-		left: 0;
-		pointer-events: none;
+		display: flex;
+		margin: 12px 0;
 
 	}
 

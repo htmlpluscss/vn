@@ -1,42 +1,13 @@
 .header {
 
 	padding: 25px 0;
+	margin-bottom: 46px;
 
 	&__box {
 
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-
-	}
-
-	&__logo {
-
-		display: flex;
-		flex-grow: 1;
-		order: 2;
-		justify-content: center;
-
-	}
-
-	&__left,
-	&__right {
-
-		width: 256px;
-		display: flex;
-
-	}
-
-	&__left {
-
-		order: 1;
-
-	}
-
-	&__right {
-
-		order: 3;
-		justify-content: flex-end;
 
 	}
 

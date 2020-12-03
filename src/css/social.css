@@ -5,7 +5,7 @@
 
 	&__item {
 
-		margin: 6px;
+		margin: 0 6px;
 
 	}
 
@@ -17,9 +17,10 @@
 		line-height: 20px;
 		border-radius: 21px;
 		display: flex;
-		padding: 8px 16px 8px 12px;
+		padding: 8px 16px 8px 10px;
 		align-items: center;
 		color: var(--bg);
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		background-color: var(--color);
 
