@@ -101,6 +101,12 @@
 			padding: 12px;
 			position: relative;
 
+			@media ($mdWidth) {
+
+				padding: 8px;
+
+			}
+
 			@media ($smWidth) {
 
 				padding: 4px;

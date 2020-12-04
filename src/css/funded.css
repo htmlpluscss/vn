@@ -7,6 +7,19 @@
 
 	@media ($mdWidth) {
 
+		margin: 0 12px;
+		padding: 120px 0;
+
+		.center {
+
+			padding: 0 24px;
+
+		}
+
+	}
+
+	@media ($smWidth) {
+
 		padding: 40px 0;
 		margin: 0 10px;
 
@@ -36,6 +49,12 @@
 
 		@media ($mdWidth) {
 
+			margin-top: 72px;
+
+		}
+
+		@media ($smWidth) {
+
 			font-size: 36px;
 			line-height: 48px;
 			margin-top: 30px;
@@ -59,7 +78,7 @@
 			color: var(--text);
 			margin: 36px 0;
 
-			@media ($mdWidth) {
+			@media ($smWidth) {
 
 				margin: 20px 0 30px;
 
@@ -101,6 +120,12 @@
 			@media ($mdWidth) {
 
 				width: 100%;
+				height: auto;
+
+			}
+
+			@media ($smWidth) {
+
 				height: 240px;
 				object-fit: cover;
 
@@ -120,7 +145,7 @@
 			opacity: 0.2;
 			border-radius: 20px;
 
-			@media ($mdWidth) {
+			@media ($smWidth) {
 
 				display: none;
 

@@ -6,6 +6,19 @@
 	text-align: center;
 	margin: 0 36px 36px;
 
+	@media ($mdWidth) {
+
+		margin: 0 12px 36px;
+		padding: 82px 0 60px;
+
+		.center {
+
+			padding: 0 24px;
+
+		}
+
+	}
+
 	@media ($smWidth) {
 
 		margin: 10px;
@@ -27,9 +40,9 @@
 		padding: 48px;
 		position: relative;
 
-		@media ($smWidth) {
+		@media ($mdWidth) {
 
-			padding: 20px;
+			padding: 48px 36px;
 
 			&::after {
 
@@ -39,6 +52,12 @@
 				bottom: 10px;
 
 			}
+
+		}
+
+		@media ($smWidth) {
+
+			padding: 20px;
 
 		}
 
