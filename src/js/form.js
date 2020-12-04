@@ -73,3 +73,118 @@
 	});
 
 })(document.querySelectorAll('.form-subscribe'));
+
+
+// mailer
+
+( forms => {
+
+	if(!forms.length) {
+
+		return;
+
+	}
+
+	//reCaptcha v3
+
+	let reCaptchaOFF = true;
+	const PUBLIC_KEY = '6LdEIvkZAAAAAKkOVmnhwgc0hpKueZkUglPfuow2';
+
+	const loadReCaptcha = () => {
+
+		if(reCaptchaOFF) {
+
+			reCaptchaOFF = false;
+
+			const script = document.createElement('script');
+
+			script.async = true;
+			script.src = 'https://www.google.com/recaptcha/api.js?render=' + PUBLIC_KEY;
+
+			document.head.appendChild(script);
+
+		}
+
+	};
+
+	Array.from(forms, form => {
+
+		form.addEventListener('input', () => loadReCaptcha());
+
+		form.addEventListener('reset', () => form.classList.remove('is-done'));
+
+		form.addEventListener('submit', event => {
+
+			event.preventDefault();
+
+			const formBtnSubmit = form.querySelector('.form__submit'),
+				  formData = new FormData(form),
+				  xhr = new XMLHttpRequest(),
+				  action = form.getAttribute('action');
+
+			xhr.open("POST", action);
+
+			if(formBtnSubmit) {
+
+				formBtnSubmit.disabled = true;
+
+			}
+
+			xhr.onreadystatechange = () => {
+
+				if (xhr.readyState !== 4){
+
+					return;
+
+				}
+
+				if (xhr.status !== 200) {
+
+					alert('ошибка ' + xhr.status);
+
+				}
+				else {
+
+					form.classList.add('is-done');
+
+				}
+
+				if(formBtnSubmit) {
+
+					formBtnSubmit.disabled = false;
+
+				}
+
+			}
+
+xhr.send(formData);
+return;
+			// reCaptcha
+
+			if (typeof(grecaptcha) == 'undefined') {
+
+				formData.append('g_recaptcha_response', 'error');
+				xhr.send(formData);
+
+				alert('Ошибка отправки! Google reCaptcha не загрузилась, пожалуйста сообщите администратору.');
+
+			} else {
+
+				grecaptcha.ready( () => {
+
+					grecaptcha.execute(PUBLIC_KEY).then( token => {
+
+						formData.append('g_recaptcha_response', token);
+						xhr.send(formData);
+
+					});
+
+				});
+
+			}
+
+		});
+
+	});
+
+})(document.querySelectorAll('.form-mailer'));
