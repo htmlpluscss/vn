@@ -14,7 +14,7 @@
 
 		form.classList.remove('is-send');
 
-		form.querySelector('.form-subscribe__result').textContent = data.msg;
+		form.querySelector('.form-subscribe__result').innerHTML = data.msg;
 
 		form.classList.add('is-done');
 
@@ -117,12 +117,10 @@
 
 			event.preventDefault();
 
-			const formBtnSubmit = form.querySelector('.form__submit'),
+			const form = event.target,
+				  url = form.getAttribute('action'),
 				  formData = new FormData(form),
-				  xhr = new XMLHttpRequest(),
-				  action = form.getAttribute('action');
-
-			xhr.open("POST", action);
+				  formBtnSubmit = form.querySelector('.form__submit');
 
 			if(formBtnSubmit) {
 
@@ -130,41 +128,9 @@
 
 			}
 
-			xhr.onreadystatechange = () => {
-
-				if (xhr.readyState !== 4){
-
-					return;
-
-				}
-
-				if (xhr.status !== 200) {
-
-					alert('ошибка ' + xhr.status);
-
-				}
-				else {
-
-					form.classList.add('is-done');
-
-				}
-
-				if(formBtnSubmit) {
-
-					formBtnSubmit.disabled = false;
-
-				}
-
-			}
-
-xhr.send(formData);
-return;
 			// reCaptcha
 
 			if (typeof(grecaptcha) == 'undefined') {
-
-				formData.append('g_recaptcha_response', 'error');
-				xhr.send(formData);
 
 				alert('Ошибка отправки! Google reCaptcha не загрузилась, пожалуйста сообщите администратору.');
 
@@ -175,7 +141,29 @@ return;
 					grecaptcha.execute(PUBLIC_KEY).then( token => {
 
 						formData.append('g_recaptcha_response', token);
-						xhr.send(formData);
+
+						fetch(url, {
+
+							method: 'POST',
+							body: formData
+
+						})
+						.then( response => {
+
+							console.log(response);
+
+							if (response.ok) {
+
+								form.reset();
+								form.classList.add('is-done');
+
+							} else {
+
+								alert("Ошибка HTTP: " + response.status);
+
+							}
+
+						});
 
 					});
 

@@ -70,7 +70,7 @@ gulp.task('html', function() {
 		.pipe(debug({title: 'html:'}))
 		.pipe(nunjucksRender({
 			data: {
-				url: 'https://valuenetwork.finance',
+				url: 'https://valuenetwork.live',
 				site: site
 			},
 			path: 'src/'
@@ -86,6 +86,10 @@ gulp.task('html', function() {
 			}
 		}))
 		.pipe(w3cjs.reporter())
+
+		.pipe(replace('<link href="/css/styles.css" rel="stylesheet">', '<style>' + fs.readFileSync('build/css/styles.min.css', "utf8") + '</style>'))
+		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
+
 		.pipe(gulp.dest('build'))
 
 });
@@ -167,11 +171,11 @@ gulp.task('copy', function() {
 
 gulp.task('ftp', function () {
 
-	if(!config) {
+//	if(!config) {
 
 		return true;
 
-	}
+//	}
 
 	const f = filter('**/*.html', {restore: true});
 	const cssInline = fs.readFileSync('build/css/styles.min.css', "utf8");

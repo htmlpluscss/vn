@@ -24,11 +24,13 @@ if (!empty($g_recaptcha_response)) {
 if (!$g_recaptcha_response_check) {
 
 	$mytext = date('d.m.y H:i') . "\r\n";
-	$mytext .= $_POST['subject'] . "\r\n";
-	$mytext .= $_POST['name'] . "\r\n";
-	$mytext .= $_POST['email'] . "\r\n";
-	$mytext .= $_POST['linkedin'] . "\r\n";
-	$mytext .= $_POST['message'] . "\r\n";
+
+	foreach ($_POST as $key => $value) {
+
+		$mytext .= $key . ': ' . $value . "\r\n";
+
+	}
+
 	$mytext .= "___________\r\n";
 
 	$fp = fopen('log-invalid-recaptcha.txt', "a");

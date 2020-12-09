@@ -202,6 +202,19 @@
 		color: var(--bg);
 		display: block;
 
+		a {
+
+			color: var(--blue);
+			text-decoration: underline;
+
+			&:hover {
+
+				text-decoration: none;
+
+			}
+
+		}
+
 	}
 
 	&__btn {

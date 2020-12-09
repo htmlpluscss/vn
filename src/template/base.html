@@ -6,13 +6,19 @@
 
 	<title>{{ title }}</title>
 
+	<link href="/css/styles.css" rel="preload" as="style">
 	<link href="/js/scripts.js" rel="preload" as="script">
 
 	<link href="/fonts/poppins-v15-latin-400.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
 	<link href="/fonts/poppins-v15-latin-500.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
 	<link href="/fonts/poppins-v15-latin-600.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
+	<link href="/fonts/poppins-v15-latin-700.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
 
 	<link href="/favicon.png" rel="apple-touch-icon-precomposed">
+
+	<link rel="preconnect" href="https://mc.yandex.ru/">
+	<link rel="dns-prefetch" href="https://mc.yandex.ru/">
+	<link rel="dns-prefetch" href="https://www.google-analytics.com/">
 
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,10 +44,30 @@
 	<script defer src="/js/scripts.js"></script>
 
 {% for item in preloadImage %}
-
 	<link href="{{ item.img }}" rel="preload" as="image" media="{{ item.media }}">
-
 {% endfor %}
+
+<script>
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(70306213, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-80WPRK8M95"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-80WPRK8M95');
+</script>
 
 </head>
 

@@ -2,7 +2,7 @@
 [build](http://vn.wndrbase.com/)
 
 ## support browsers:
-**Android >= 4.4**
+**Android >= 5**
 
 ### Working hours:
-00:00
+11:00

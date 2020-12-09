@@ -95,6 +95,37 @@
 .modal-form {
 
 	width: 772px;
+	position: relative;
+
+	&.is-done {
+
+		pointer-events: none;
+
+	}
+
+	&.is-done &__done {
+
+		opacity: 1;
+
+	}
+
+	&__done {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--bg);
+		opacity: 0;
+		transition: var(--transitionDefault);
+		pointer-events: none;
+
+	}
 
 	@media ($mdWidth) {
 
