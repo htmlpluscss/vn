@@ -1,16 +1,26 @@
 .based {
 
-	margin: 36px 0 132px;
+	background-color: var(--gray);
+	border-radius: 12px;
+	margin: 60px 36px;
+	padding: 120px 0;
 
 	@media ($mdWidth) {
 
-		margin: 120px 0;
+		margin: 60px 12px;
+
+		.center {
+
+			padding: 0 24px;
+
+		}
 
 	}
 
 	@media ($smWidth) {
 
-		margin: 60px 0;
+		padding: 40px 0;
+		margin: 30px 10px;
 
 	}
 
@@ -83,6 +93,7 @@
 
 		display: flex;
 		margin: 12px 0;
+		pointer-events: none;
 
 		@media ($smWidth) {
 

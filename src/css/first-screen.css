@@ -38,27 +38,24 @@
 	&__btn {
 
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: center;
-		margin: 36px 0 62px;
+		margin: 18px -18px 40px;
 
 		@media ($smWidth) {
 
-			margin: 30px auto 60px;
-			width: 320px;
-			max-width: 100%;
+			margin: 30px -18px 60px;
+
+			.btn {
+
+
+			}
 
 		}
 
 		.btn {
 
-			min-width: 377px;
-
-			@media ($smWidth) {
-
-				min-width: 0;
-				width: 100%;
-
-			}
+			margin: 18px;
 
 		}
 
@@ -68,7 +65,7 @@
 
 		position: relative;
 		overflow: hidden;
-		height: 434px;
+		height: 464px;
 		display: flex;
 		justify-content: center;
 

@@ -75,11 +75,63 @@
 
 	&--small {
 
-		padding: 0 24px;
-		height: 44px;
+		padding: 0 20px;
+		height: 50px;
 		font-weight: 500;
 		font-size: 14px;
-		line-height: 44px;
+		line-height: 50px;
+
+	}
+
+	&--small&--ico {
+
+		padding-left: 56px;
+
+		svg {
+
+			left: 20px;
+
+		}
+
+	}
+
+	&--chat {
+
+		padding: 0 16px 0 48px;
+		height: 42px;
+		font-size: 10px !important;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		line-height: 42px;
+		border-radius: 21px;
+
+		svg {
+
+			fill: #fff;
+			position: absolute;
+			top: 0;
+			left: 16px;
+			bottom: 0;
+			margin: auto;
+
+		}
+
+	}
+
+	&--ico {
+
+		padding-left: 66px;
+
+		svg {
+
+			fill: #fff;
+			position: absolute;
+			top: 0;
+			left: 30px;
+			bottom: 0;
+			margin: auto;
+
+		}
 
 	}
 
@@ -110,6 +162,57 @@
 			&:hover {
 
 				background-color: var(--blue);
+
+			}
+
+		}
+
+	}
+
+	&--red {
+
+		color: var(--color);
+		background-color: var(--red);
+
+		@media ($desktop) {
+
+			&:hover {
+
+				background-color: var(--red);
+
+			}
+
+		}
+
+	}
+
+	&--green {
+
+		color: var(--color);
+		background-color: var(--green);
+
+		@media ($desktop) {
+
+			&:hover {
+
+				background-color: var(--green);
+
+			}
+
+		}
+
+	}
+
+	&--grey {
+
+		color: var(--color);
+		background-color: color(var(--color) a(20%));
+
+		@media ($desktop) {
+
+			&:hover {
+
+				background-color: color(var(--color) a(20%));
 
 			}
 

@@ -1,7 +1,7 @@
 .header {
 
 	padding: 25px 0;
-	margin-bottom: 46px;
+	margin-bottom: 40px;
 
 	@media ($mdWidth) {
 

@@ -26,7 +26,7 @@
 		document.body.classList.remove('modal-show');
 		window.scrollTo(0,windowScroll);
 
-		setTimeout( () => document.documentElement.classList.remove('scroll-behavior-off'));
+		setTimeout( () => document.documentElement.classList.remove('scroll-behavior-off'), 100);
 
 		VN.activeModal = false;
 
