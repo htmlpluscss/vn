@@ -171,21 +171,14 @@ gulp.task('copy', function() {
 
 gulp.task('ftp', function () {
 
-//	if(!config) {
+	if(!config) {
 
 		return true;
 
-//	}
+	}
 
-	const f = filter('**/*.html', {restore: true});
-	const cssInline = fs.readFileSync('build/css/styles.min.css', "utf8");
-
-	return gulp.src(['build/**/*','!**/*.mp4'], {since: gulp.lastRun('ftp')})
+	return gulp.src('build/**/*', {since: gulp.lastRun('ftp')})
 		.pipe(debug({title: 'ftp:'}))
-		.pipe(f)
-		.pipe(replace('<link href="/css/styles.css" rel="stylesheet">', '<style>' + cssInline + '</style>'))
-		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
-		.pipe(f.restore)
 		.pipe(ftp(config.ftp));
 
 });
