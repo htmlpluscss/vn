@@ -203,23 +203,6 @@
 
 	}
 
-	&--grey {
-
-		color: var(--color);
-		background-color: color(var(--color) a(20%));
-
-		@media ($desktop) {
-
-			&:hover {
-
-				background-color: color(var(--color) a(20%));
-
-			}
-
-		}
-
-	}
-
 }
 
 .input {
