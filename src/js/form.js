@@ -6,7 +6,7 @@
 
 	}
 
-	VN.readySubscribe = data => {
+	window.readySubscribe = data => {
 
 		console.log(data);
 
@@ -55,7 +55,7 @@
 			let url = form.getAttribute('action');
 
 			url = url.replace("/post?u=", "/post-json?u=");
-			url = url + '&c=VN.readySubscribe';
+			url = url + '&c=window.readySubscribe';
 			url = url + '&' + getQueryString(new FormData(form));
 
 			form.classList.add('is-send');
