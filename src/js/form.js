@@ -63,8 +63,7 @@
 
 			const script = document.createElement('script');
 
-			script.async = true;
-			script.src = url
+			script.src = url;
 
 			document.head.appendChild(script);
 

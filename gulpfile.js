@@ -1,15 +1,19 @@
 'use strict';
 
 const gulp             = require('gulp');
-const babel            = require('gulp-babel');
 const postcss          = require('gulp-postcss');
-const autoprefixer     = require("autoprefixer");
 const csso             = require("gulp-csso");
 const minify           = require('gulp-minify');
 const browserReporter  = require('postcss-browser-reporter');
 
+const postcssImport    = require('postcss-partial-import');
+const postcssVariables = require('postcss-advanced-variables');
+const postcssColor     = require('postcss-color-function');
+const postcssNesting   = require('postcss-nesting');
+const postcssNested    = require('postcss-nested');
+const postcssExtend    = require('postcss-extend');
+
 const mqpacker         = require("css-mqpacker");
-const precss           = require("precss");
 const sourcemaps       = require('gulp-sourcemaps');
 
 const nunjucksRender   = require('gulp-nunjucks-render');
@@ -20,35 +24,23 @@ const plumber          = require('gulp-plumber');
 const server           = require('browser-sync').create();
 const ftp              = require('gulp-ftp');
 const replace          = require('gulp-replace');
-const filter           = require('gulp-filter');
 
 const del              = require('del');
-const fs               = require("fs");
 
 const newer            = require('gulp-newer');
 
 const concat           = require('gulp-concat');
-const gulpif           = require('gulp-if');
 const remember         = require('gulp-remember');
 
 const debug            = require('gulp-debug');
 const touch            = require('gulp-touch');
 
-const htmlmin          = require('gulp-html-minifier2');
 const w3cjs            = require('gulp-w3cjs');
-
-const gutil            = require('gulp-util');
-const data             = require('gulp-data');
-const svgStore         = require('gulp-svgstore');
-const cheerio          = require('cheerio');
-const svgmin           = require('gulp-svgmin');
-const through2         = require('through2');
-const consolidate      = require('gulp-consolidate');
 
 let config             = null;
 
 const site             = 'VN';
-const domain           = 'vn.wndrbase.com';
+const domain           = 'vn-vers2.wndrbase.com';
 
 try {
 
@@ -63,7 +55,7 @@ try {
 
 }
 
-gulp.task('html', function() {
+gulp.task('html', () => {
 
 	return gulp.src('src/index.html')
 		.pipe(plumber())
@@ -76,7 +68,7 @@ gulp.task('html', function() {
 			path: 'src/'
 		}))
 		.pipe(w3cjs({
-			verifyMessage: function(type, message) {
+			verifyMessage: (type, message) => {
 
 				// prevent logging error message
 				if(message.indexOf('Attribute “loading” not allowed on element “img” at this point.') === 0) return false;
@@ -87,45 +79,42 @@ gulp.task('html', function() {
 		}))
 		.pipe(w3cjs.reporter())
 
-		.pipe(replace('<link href="/css/styles.css" rel="stylesheet">', '<style>' + fs.readFileSync('build/css/styles.min.css', "utf8") + '</style>'))
-		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
+//		.pipe(replace('<link href="/css/styles.css" rel="stylesheet">', '<style>' + fs.readFileSync('build/css/styles.min.css', "utf8") + '</style>'))
+//		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
 
 		.pipe(gulp.dest('build'))
 
 });
 
-gulp.task('css', function () {
+gulp.task('css', () => {
 
 	return gulp.src('src/css/style.css')
 			.pipe(plumber())
 			.pipe(sourcemaps.init())
 			.pipe(postcss([
-				precss(),
+				postcssImport(),
+				postcssVariables(),
+				postcssColor(),
+				postcssNesting(),
+				postcssNested(),
+				postcssExtend(),
 				mqpacker(),
 				browserReporter()
 			]))
 			.pipe(sourcemaps.write())
 			.pipe(rename('styles.css'))
 			.pipe(gulp.dest('build/css'))
-			.pipe(postcss([
-				autoprefixer({
-					browsers: 'Android >= 5'
-				})
-			]))
 			.pipe(csso())
 			.pipe(rename({suffix: ".min"}))
 			.pipe(gulp.dest('build/css'))
 
 });
 
-gulp.task('js', function() {
+gulp.task('js', () => {
 
-	return gulp.src(['src/js/js.js','src/js/*.js'])
+	return gulp.src(['src/js/*.min.js','src/js/js.js','src/js/*'])
 		.pipe(sourcemaps.init())
 		.pipe(concat('scripts.js'))
-		.pipe(babel({
-			presets: ['@babel/env']
-		}))
 		.pipe(sourcemaps.write())
 		.pipe(minify({
 			preserveComments: "some",
@@ -135,31 +124,26 @@ gulp.task('js', function() {
 		}))
 		.pipe(gulp.dest('build/js/'))
 
+
 });
 
-gulp.task('serve', function() {
+gulp.task('serve', () => {
 
 	server.init({
 		server: 'build',
 		files: [
 			{
 				match: ['build/**/*.*', '!build/**/*.min.{css,js}'],
-				fn: function (event, file) {
-					this.reload()
-				}
+				fn: server.reload()
 			}
 		]
 	});
 
 });
 
-gulp.task('clear', function() {
+gulp.task('clear', () => del('build'));
 
-	return del('build');
-
-});
-
-gulp.task('copy', function() {
+gulp.task('copy', () => {
 
 	return gulp.src(['src/**/*.*', '!src/**/*.{css,html,js}'], {since: gulp.lastRun('copy')})
 			.pipe(debug({title: 'copy:'}))
@@ -169,7 +153,7 @@ gulp.task('copy', function() {
 
 });
 
-gulp.task('ftp', function () {
+gulp.task('ftp', () => {
 
 	if(!config) {
 
@@ -183,7 +167,7 @@ gulp.task('ftp', function () {
 
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
 	gulp.watch('src/js/*.*', gulp.series('js'));
 	gulp.watch('src/css/*.*', gulp.series('css'));
 	gulp.watch('src/**/*.html', gulp.series('html'));

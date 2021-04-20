@@ -9,11 +9,13 @@
 	cursor: pointer;
 	user-select: none;
 	position: relative;
-	font-size: 0;
+	font-size: inherit;
+	line-height: inherit;
 	color: transparent;
 	text-align: center;
 	white-space: nowrap;
 	display: block;
+	appearance: none;
 
 	&:focus {
 
