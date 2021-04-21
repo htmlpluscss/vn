@@ -39,7 +39,7 @@ const w3cjs            = require('gulp-w3cjs');
 
 let config             = null;
 
-const site             = 'VN';
+const site             = 'ValueNetwork';
 const domain           = 'vn-vers2.wndrbase.com';
 
 try {

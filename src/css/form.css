@@ -39,16 +39,46 @@
 
 .btn {
 
-	padding: 0 36px;
-	height: 72px;
+	padding: 20px 30px;
 	font-size: 18px;
-	line-height: 72px;
+	line-height: 30px;
 	font-weight: 600;
-	border-radius: 6px;
+	border-radius: 12px;
 
 	@media ($smWidth) {
 
 		font-size: 16px;
+
+	}
+
+	&--medium {
+
+		padding: 16px;
+		font-weight: 500;
+		line-height: 18px;
+
+	}
+
+	&__inner {
+
+		display: flex;
+		align-items: center;
+
+		img {
+
+			margin-right: 10px;
+
+		}
+
+		small {
+
+			font-size: 12px;
+			opacity: 0.5;
+			display: block;
+			text-align: left;
+			font-weight: 400;
+
+		}
 
 	}
 
@@ -59,98 +89,10 @@
 
 	}
 
-	&--outline {
+	&--transparent {
 
 		color: var(--color);
-		box-shadow: inset 0 0 0 1px var(--color);
-
-	}
-
-	&--medium {
-
-		height: 60px;
-		font-weight: 500;
-		font-size: 16px;
-		line-height: 60px;
-
-	}
-
-	&--small {
-
-		padding: 0 20px;
-		height: 50px;
-		font-weight: 500;
-		font-size: 14px;
-		line-height: 50px;
-
-	}
-
-	&--small&--ico {
-
-		padding-left: 56px;
-
-		svg {
-
-			left: 20px;
-
-		}
-
-	}
-
-	&--chat {
-
-		padding: 0 16px 0 48px;
-		height: 42px;
-		font-size: 10px !important;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		line-height: 42px;
-		border-radius: 21px;
-
-		svg {
-
-			fill: #fff;
-			position: absolute;
-			top: 0;
-			left: 16px;
-			bottom: 0;
-			margin: auto;
-
-		}
-
-	}
-
-	&--ico {
-
-		padding-left: 66px;
-
-		svg {
-
-			fill: #fff;
-			position: absolute;
-			top: 0;
-			left: 30px;
-			bottom: 0;
-			margin: auto;
-
-		}
-
-	}
-
-	&--label {
-
-		padding: 0 12px;
-		font-weight: 500;
-		font-size: 12px;
-		height: 32px;
-		line-height: 32px;
-		border-radius: 16px;
-
-		@media ($smWidth) {
-
-			font-size: 12px;
-
-		}
+		background-color: rgba(255, 255, 255, 0.09);
 
 	}
 
@@ -171,37 +113,10 @@
 
 	}
 
-	&--red {
+	&--img {
 
-		color: var(--color);
-		background-color: var(--red);
-
-		@media ($desktop) {
-
-			&:hover {
-
-				background-color: var(--red);
-
-			}
-
-		}
-
-	}
-
-	&--green {
-
-		color: var(--color);
-		background-color: var(--green);
-
-		@media ($desktop) {
-
-			&:hover {
-
-				background-color: var(--green);
-
-			}
-
-		}
+		padding: 0;
+		border-radius: 0;
 
 	}
 

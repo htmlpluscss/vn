@@ -89,6 +89,7 @@ li {
 svg {
 
 	display: block;
+	fill: var(--color);
 	position: relative;
 	transition: var(--transitionDefault);
 

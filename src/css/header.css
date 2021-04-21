@@ -2,6 +2,25 @@
 
 	padding: 18px 0 16px;
 	border-bottom: 1px solid rgba(78, 78, 78, .4);
+	position: sticky;
+	top: 0;
+	z-index: 9;
+	background-color: var(--bg);
+
+
+	&::after {
+
+		position: absolute;
+		height: 60px;
+		top: 100%;
+		left: 0;
+		right: 0;
+		content: '';
+		margin-top: 1px;
+		pointer-events: none;
+		background-image: linear-gradient(to bottom, rgba(18, 18, 18, 1), rgba(18, 18, 18, 0));
+
+	}
 
 	.center {
 
@@ -61,6 +80,7 @@
 		&-arrow {
 
 			margin-left: 4px;
+			fill: var(--text);
 
 		}
 

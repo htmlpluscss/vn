@@ -15,18 +15,8 @@
 		padding: 6px;
 		align-items: center;
 
-		svg {
-
-			fill: var(--color);
-
-		}
-
 		@media ($desktop) {
 
-			&:hover svg {
-
-
-			}
 
 		}
 
