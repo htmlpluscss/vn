@@ -173,7 +173,7 @@
 	border: 0;
 	border-radius: 6px;
 
-	background-color: var(--gray);
+	background-color: var(--color);
 
 	@media ($smWidth) {
 
@@ -206,7 +206,7 @@
 
 		&:hover {
 
-			background-color: color(var(--gray) a(70%));
+			background-color: color(var(--color) a(70%));
 
 			&::placeholder {
 
@@ -219,7 +219,7 @@
 	&:focus {
 
 		outline: none;
-		background-color: color(var(--gray) a(70%));
+		background-color: color(var(--color) a(70%));
 
 		&::placeholder {
 
