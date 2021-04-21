@@ -3,15 +3,6 @@
 	margin: 30px 0;
 	text-align: center;
 
-	hr {
-
-		margin-top: 118px;
-		background-color: rgba(255, 255, 255, .1);
-		height: 1px;
-		border: 0;
-
-	}
-
 	&__title {
 
 		font-weight: 500;
@@ -85,34 +76,6 @@
 		font-size: 18px;
 		line-height: 30px;
 		margin: 12px 0;
-
-	}
-
-	&__more {
-
-		display: flex;
-		justify-content: center;
-
-		a {
-
-			font-weight: 500;
-			font-size: 12px;
-			line-height: 20px;
-			display: flex;
-			align-items: center;
-			letter-spacing: 0.04em;
-			padding: 4px 6px 4px 12px;
-			border: 1px solid;
-			text-transform: uppercase;
-			border-radius: 4px;
-
-			svg {
-
-				margin-left: 4px;
-
-			}
-
-		}
 
 	}
 

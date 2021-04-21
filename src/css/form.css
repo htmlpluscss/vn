@@ -120,6 +120,38 @@
 
 	}
 
+	&-more {
+
+		display: flex;
+		justify-content: center;
+
+		a {
+
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 20px;
+			display: flex;
+			align-items: center;
+			letter-spacing: 0.04em;
+			padding: 3px 5px 3px 10px;
+			border: 1px solid;
+			text-transform: uppercase;
+			border-radius: 4px;
+
+			&::after {
+
+				margin-left: 4px;
+				content: '';
+				background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='16' viewBox='0 0 17 16'%3E%3Cpath fill="white" d='M11.17 6.28L5.43 12l-.94-.94 5.74-5.74H5.17V4h7.33v7.33h-1.33V6.28z'/%3E%3C/svg%3E%0A");
+				width: 17px;
+				height: 16px;
+
+			}
+
+		}
+
+	}
+
 }
 
 .input {
