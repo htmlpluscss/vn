@@ -1,0 +1,105 @@
+.funded {
+
+	margin: 230px 0;
+
+	&__box {
+
+		display: flex;
+		padding-right: 20px;
+
+		@media ($mdWidth) {
+
+			display: block;
+			padding: 0;
+
+		}
+
+	}
+
+	&__title {
+
+		font-size: 48px;
+		font-weight: 500;
+		line-height: 60px;
+		margin-top: 52px;
+
+		@media ($mdWidth) {
+
+			/* margin-top: 72px; */
+
+		}
+
+		@media ($smWidth) {
+/*
+			font-size: 36px;
+			line-height: 48px;
+			margin-top: 30px */;
+
+		}
+
+	}
+
+	&__content {
+
+		width: 448px;
+		flex-shrink: 0;
+
+		@media ($mdWidth) {
+
+			width: 100%;
+
+		}
+
+		p {
+
+			color: var(--text);
+			margin: 36px 0;
+
+			@media ($smWidth) {
+
+				margin: 20px 0 30px;
+
+			}
+
+		}
+
+	}
+
+	&__btn {
+
+		display: flex;
+
+		@media ($mdWidth) {
+
+			margin: 0 auto;
+			width: 320px;
+			max-width: 100%;
+
+			.btn {
+
+				padding: 0;
+				width: 100%;
+
+			}
+
+		}
+
+	}
+
+	&__img {
+
+		position: relative;
+		flex-grow: 1;
+		margin-right: 107px;
+
+		img {
+
+			position: absolute;
+			top: 0;
+			right: 0;
+
+		}
+
+	}
+
+}
