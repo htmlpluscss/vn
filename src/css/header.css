@@ -63,6 +63,12 @@
 
 	}
 
+	&__center {
+
+		display: flex;
+
+	}
+
 	&__try-valueswap {
 
 		display: flex;

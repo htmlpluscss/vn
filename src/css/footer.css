@@ -2,6 +2,13 @@
 
 	margin-top: 56px;
 
+	&__social {
+
+		display: flex;
+		justify-content: center;
+
+	}
+
 	&__links {
 
 		display: flex;
