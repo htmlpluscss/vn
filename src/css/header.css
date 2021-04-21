@@ -1,42 +1,15 @@
 .header {
 
-	padding: 25px 0;
-	margin-bottom: 40px;
+	padding: 18px 0 16px;
+	border-bottom: 1px solid rgba(78, 78, 78, .4);
 
-	@media ($mdWidth) {
+	.center {
 
-		.center {
-
-			width: 100%;
-
-		}
+		width: 1440px;
 
 	}
 
 	@media ($smWidth) {
-
-		padding: 20px 0;
-		border-bottom: 1px solid #414141;
-		margin-bottom: 20px;
-
-		.btn {
-
-			width: 50px;
-			height: 50px;
-			padding: 0;
-
-			svg {
-
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				margin: auto;
-
-			}
-
-		}
 
 	}
 
@@ -44,8 +17,6 @@
 
 		@media ($smWidth) {
 
-			width: 217px;
-			height: 14px;
 
 		}
 
@@ -56,6 +27,42 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+	}
+
+	&__left {
+
+		width: 200px;
+
+	}
+
+	&__right {
+
+		width: 200px;
+		display: flex;
+		justify-content: flex-end;
+
+	}
+
+	&__try-valueswap {
+
+		display: flex;
+		align-items: center;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+
+		&-ico {
+
+			margin-right: 12px;
+
+		}
+
+		&-arrow {
+
+			margin-left: 4px;
+
+		}
 
 	}
 
