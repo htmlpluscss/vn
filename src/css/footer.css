@@ -2,10 +2,28 @@
 
 	margin-top: 56px;
 
+	@media ($mdWidth) {
+
+		margin-top: 98px;
+
+	}
+
 	&__social {
 
 		display: flex;
 		justify-content: center;
+
+		@media ($mdWidth) {
+
+			display: block;
+
+			.social {
+
+				margin-bottom: 6px;
+
+			}
+
+		}
 
 	}
 

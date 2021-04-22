@@ -2,6 +2,12 @@
 
 	margin: 230px 0 196px;
 
+	@media ($mdWidth) {
+
+		margin: 0;
+
+	}
+
 	&__box {
 
 		display: flex;
@@ -25,15 +31,9 @@
 
 		@media ($mdWidth) {
 
-			/* margin-top: 72px; */
-
-		}
-
-		@media ($smWidth) {
-/*
 			font-size: 36px;
 			line-height: 48px;
-			margin-top: 30px */;
+			margin-top: 0;
 
 		}
 
@@ -69,21 +69,6 @@
 
 		display: flex;
 
-		@media ($mdWidth) {
-
-			margin: 0 auto;
-			width: 320px;
-			max-width: 100%;
-
-			.btn {
-
-				padding: 0;
-				width: 100%;
-
-			}
-
-		}
-
 	}
 
 	&__img {
@@ -91,6 +76,22 @@
 		position: relative;
 		flex-grow: 1;
 		margin-right: 107px;
+
+		@media ($mdWidth) {
+
+			margin: 64px 0 32px;
+
+			img {
+
+				position: relative;
+				margin: auto;
+				max-width: 100%;
+				width: auto;
+				height: auto;
+
+			}
+
+		}
 
 		img {
 

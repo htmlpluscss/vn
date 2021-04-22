@@ -3,6 +3,12 @@
 	margin: 30px 0;
 	text-align: center;
 
+	@media ($mdWidth) {
+
+		margin: 40px 0;
+
+	}
+
 	&__title {
 
 		font-weight: 500;
@@ -35,11 +41,43 @@
 
 		}
 
+		@media ($mdWidth) {
+
+			display: block;
+			margin: 0;
+			font-size: 16px;
+			line-height: 24px;
+			margin: 60px 0 0;
+
+			&::before {
+
+				display: none;
+
+			}
+
+		}
+
 	}
 
 	&__item {
 
 		width: 304px;
+
+		@media ($mdWidth) {
+
+			width: 100%;
+
+			&::after {
+
+				content: '';
+				display: block;
+				height: 3px;
+				background: linear-gradient(90deg, rgba(208, 208, 208, 0) 0%, #D0D0D0 52.6%, rgba(208, 208, 208, 0) 100%);
+				margin: 30px 0;
+
+			}
+
+		}
 
 	}
 
@@ -54,6 +92,23 @@
 		background-color: var(--bg);
 		margin-bottom: 20px;
 		position: relative;
+
+		@media ($mdWidth) {
+
+			height: auto;
+			margin-bottom: 24px;
+
+		}
+
+	}
+
+	&__desc {
+
+		@media ($mdWidth) {
+
+			margin: 0 20px;
+
+		}
 
 	}
 
@@ -76,6 +131,12 @@
 		font-size: 18px;
 		line-height: 30px;
 		margin: 12px 0;
+
+		&-sep {
+
+			margin: 0 5px;
+
+		}
 
 	}
 

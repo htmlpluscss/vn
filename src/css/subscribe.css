@@ -2,6 +2,12 @@
 
 	padding: 160px 0;
 
+	@media ($mdWidth) {
+
+		padding: 60px 0;
+
+	}
+
 	&__box {
 
 		display: flex;
@@ -31,6 +37,7 @@
 		@media ($smWidth) {
 
 			padding: 60px 20px;
+			border-radius: 12px;
 
 		}
 
@@ -55,7 +62,7 @@
 
 		@media ($smWidth) {
 
-			margin-top: 20px;
+			border-radius: 12px;
 
 		}
 
@@ -69,6 +76,12 @@
 			background-color: #EDEDED;
 			border-radius: 12px;
 			margin: 0 auto 10px;
+
+			@media ($mdWidth) {
+
+				margin-bottom: 14px;
+
+			}
 
 		}
 
@@ -208,6 +221,18 @@
 		display: flex;
 		justify-content: center;
 		margin-top: 26px;
+
+		@media ($smWidth) {
+
+			margin-top: 32px;
+
+			.btn {
+
+				padding: 12px 24px;
+
+			}
+
+		}
 
 		.btn {
 

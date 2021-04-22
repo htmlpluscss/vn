@@ -3,6 +3,12 @@
 	margin: 24px 0 200px;
 	position: relative;
 
+	@media ($mdWidth) {
+
+		margin: 0;
+
+	}
+
 	&::before {
 
 		position: absolute;
@@ -28,7 +34,6 @@
 		@media ($mdWidth) {
 
 			display: block;
-			padding: 0;
 
 		}
 
@@ -75,7 +80,7 @@
 
 			@media ($smWidth) {
 
-				margin: 20px 0 30px;
+				margin: 30px 0;
 
 			}
 
@@ -102,7 +107,7 @@
 
 		@media ($smWidth) {
 
-			margin: 30px 0 10px;
+			margin: 30px 0 16px;
 
 		}
 
@@ -121,6 +126,15 @@
 		img {
 
 			right: 20px;
+
+			@media ($mdWidth) {
+
+				right: 0;
+				width: auto;
+				height: auto;
+				max-width: 100%;
+
+			}
 
 		}
 
