@@ -198,7 +198,6 @@
 	&__result {
 
 		text-align: center;
-		color: var(--bg);
 		display: block;
 
 		a {

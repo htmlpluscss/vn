@@ -56,11 +56,6 @@
 
 		}
 
-		@media ($smWidth) {
-
-
-		}
-
 	}
 
 	&__text {
@@ -81,7 +76,7 @@
 
 		margin: 60px -12px 74px;
 
-		@media ($mdWidth) {
+		@media ($smWidth) {
 
 			margin: 48px auto 12px;
 			max-width: 320px;
@@ -95,10 +90,18 @@
 			justify-content: center;
 			margin: 36px 0;
 
-			@media ($mdWidth) {
+			@media ($smWidth) {
 
 				margin: 20px 0;
 				display: block;
+
+				.btn:not(.btn--img) {
+
+					width: 100%;
+					margin: 20px 0 !important;
+					border-radius: 12px !important;
+
+				}
 
 				.btn__inner small {
 
@@ -139,19 +142,15 @@
 
 			}
 
-			@media ($desktop) {
+			.btn--white {
 
-				.btn--white {
+				width: 221px;
 
-					width: 221px;
+			}
 
-				}
+			.btn--img {
 
-				.btn--img {
-
-					margin-left: 12px;
-
-				}
+				margin-left: 12px;
 
 			}
 
@@ -159,48 +158,42 @@
 
 		&-group {
 
-			@media ($mdWidth) {
+			display: flex;
+			margin-left: 24px;
 
-				.btn {
+			.btn {
 
-					margin: 20px 0;
+				width: 236px;
+
+				& + .btn {
+
+					margin-left: 4px;
+
+				}
+
+				&:first-child {
+
+					border-top-right-radius: 0;
+					border-bottom-right-radius: 0;
+
+				}
+
+				&:last-child {
+
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
 
 				}
 
 			}
 
-			@media ($desktop) {
+			@media ($smWidth) {
 
-				display: flex;
-				margin-left: 24px;
-
-				.btn {
-
-					width: 236px;
-
-					& + .btn {
-
-						margin-left: 4px;
-
-					}
-
-					&:first-child {
-
-						border-top-right-radius: 0;
-						border-bottom-right-radius: 0;
-
-					}
-
-					&:last-child {
-
-						border-top-left-radius: 0;
-						border-bottom-left-radius: 0;
-
-					}
-
-				}
+				display: block;
+				margin: 0;
 
 			}
+
 
 		}
 
@@ -209,7 +202,7 @@
 			font-size: 12px;
 			opacity: .5;
 
-			@media ($mdWidth) {
+			@media ($smWidth) {
 
 				width: 100%;
 				text-align: center;
@@ -228,7 +221,7 @@
 
 		@media ($mdWidth) {
 
-			padding: 20px;
+			padding: 20px 0;
 			overflow-x: auto;
 			justify-content: flex-start;
 
@@ -262,7 +255,8 @@
 
 			@media ($mdWidth) {
 
-				padding-right: 20px;
+				padding: 0 20px;
+				margin: auto;
 
 				&::after {
 
