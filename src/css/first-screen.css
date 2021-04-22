@@ -83,7 +83,8 @@
 
 		@media ($mdWidth) {
 
-			margin: 48px 0 12px;
+			margin: 48px auto 12px;
+			max-width: 320px;
 
 		}
 
@@ -115,6 +116,18 @@
 					align-items: center;
 					flex-wrap: wrap;
 					margin: 40px -12px 0;
+
+					@media ($xsWidth) {
+
+						margin: 40px -10px 0;
+
+						.btn {
+
+							margin: 10px;
+
+						}
+
+					}
 
 					.btn {
 
