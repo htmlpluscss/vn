@@ -66,6 +66,14 @@
 		flex-wrap: wrap;
 		padding-bottom: 4px;
 
+		li {
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+
 		&--center {
 
 			justify-content: center;
@@ -75,6 +83,7 @@
 
 				margin: 30px 18px;
 				width: 200px;
+				display: block;
 
 			}
 
@@ -111,6 +120,18 @@
 				margin: 20px auto;
 
 			}
+
+		}
+
+	}
+
+	&__link {
+
+		transition: var(--transitionDefault);
+
+		&:hover {
+
+			opacity: .8;
 
 		}
 
