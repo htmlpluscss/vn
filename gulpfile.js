@@ -26,6 +26,7 @@ const ftp              = require('gulp-ftp');
 const replace          = require('gulp-replace');
 
 const del              = require('del');
+const fs               = require("fs");
 
 const newer            = require('gulp-newer');
 
@@ -79,8 +80,8 @@ gulp.task('html', () => {
 		}))
 		.pipe(w3cjs.reporter())
 
-//		.pipe(replace('<link href="/css/styles.css" rel="stylesheet">', '<style>' + fs.readFileSync('build/css/styles.min.css', "utf8") + '</style>'))
-//		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
+		.pipe(replace('<link href="/css/styles.css" rel="stylesheet">', '<style>' + fs.readFileSync('build/css/styles.min.css', "utf8") + '</style>'))
+		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
 
 		.pipe(gulp.dest('build'))
 
