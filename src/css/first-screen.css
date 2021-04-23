@@ -43,7 +43,7 @@
 
 			position: absolute;
 			top: -65px;
-			right: 65px;
+			right: 19px;
 
 			@media ($mdWidth) {
 
@@ -218,10 +218,13 @@
 		position: relative;
 		display: flex;
 		justify-content: center;
+		height: 572px;
+		overflow: hidden;
 
 		@media ($mdWidth) {
 
 			overflow-x: auto;
+			height: auto;
 			justify-content: flex-start;
 
 			&::-webkit-scrollbar {
