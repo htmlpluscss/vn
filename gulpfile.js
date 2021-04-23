@@ -40,7 +40,7 @@ const w3cjs            = require('gulp-w3cjs');
 
 let config             = null;
 
-const site             = 'ValueNetwork';
+const site             = 'Value Network';
 const domain           = 'vn-vers2.wndrbase.com';
 
 try {
@@ -63,7 +63,7 @@ gulp.task('html', () => {
 		.pipe(debug({title: 'html:'}))
 		.pipe(nunjucksRender({
 			data: {
-				url: 'https://valuenetwork.live',
+				url: 'https://vn-vers2.wndrbase.com',
 				site: site
 			},
 			path: 'src/'
@@ -79,10 +79,8 @@ gulp.task('html', () => {
 			}
 		}))
 		.pipe(w3cjs.reporter())
-
-		.pipe(replace('<link href="/css/styles.css" rel="stylesheet">', '<style>' + fs.readFileSync('build/css/styles.min.css', "utf8") + '</style>'))
-		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
-
+		.pipe(replace('css/styles.css', 'css/styles.css?' + Date.now()))
+		.pipe(replace('js/scripts.js', 'js/scripts.js?' + Date.now()))
 		.pipe(gulp.dest('build'))
 
 });
@@ -184,3 +182,21 @@ gulp.task('default', gulp.series(
 	'copy',
 	gulp.parallel('ftp','watch','serve')
 	));
+
+
+gulp.task('build', function() {
+
+	return gulp.src('src/**/index.html')
+		.pipe(nunjucksRender({
+			data: {
+				url: 'https://valuenetwork.live',
+				site: site,
+				build: true
+			},
+			path: 'src/'
+		}))
+		.pipe(replace('<link href="/css/styles.css" rel="stylesheet">', '<style>' + fs.readFileSync('build/css/styles.min.css', "utf8") + '</style>'))
+		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
+		.pipe(gulp.dest('build'))
+
+});
