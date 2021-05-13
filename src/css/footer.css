@@ -1,10 +1,35 @@
 .footer {
 
-	margin-top: 56px;
+	margin-top: 60px;
+	position: relative;
 
-	@media ($mdWidth) {
+	&__bg {
 
-		margin-top: 98px;
+		position: absolute;
+		height: 360px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow: hidden;
+		pointer-events: none;
+
+		@media ($mdWidth) {
+
+			height: 300px;
+
+		}
+
+		&::after {
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			content: '';
+			background-image: linear-gradient(to bottom, rgba(18, 18, 18, 0), rgba(18, 18, 18, 1));
+
+		}
 
 	}
 
@@ -49,15 +74,15 @@
 
 	}
 
-}
+	&__copyright {
 
-.copyright {
+		margin: 24px;
+		font-size: 12px;
+		line-height: 20px;
+		text-align: center;
+		color: var(--text);
+		opacity: 0.4;
 
-	margin: 24px;
-	font-size: 12px;
-	line-height: 20px;
-	text-align: center;
-	color: var(--text);
-	opacity: 0.4;
+	}
 
 }

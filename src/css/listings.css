@@ -3,23 +3,17 @@
 	text-align: center;
 	position: relative;
 
-	&::before {
+	.center::after {
 
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: -800px;
+		margin: 120px 0 114px;
+		background-color: rgba(255, 255, 255, .1);
+		height: 1px;
+		display: block;
 		content: '';
-		opacity: .5;
-		pointer-events: none;
-		background-repeat: no-repeat;
-		background-position: bottom;
-		background-image: url("data:image/svg+xml,%3Csvg width='1796' height='1047' viewBox='0 0 1796 1047' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.3' filter='url(%23filter0_f)'%3E%3Ccircle cx='1272.5' cy='523.5' r='313.5' fill='%234478F7'/%3E%3C/g%3E%3Cg opacity='0.3' filter='url(%23filter1_f)'%3E%3Ccircle cx='523.5' cy='523.5' r='313.5' fill='%231ACF99'/%3E%3C/g%3E%3Cg opacity='0.3' filter='url(%23filter2_f)'%3E%3Ccircle cx='926.5' cy='523.5' r='313.5' fill='%23EC2565'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_f' x='749' y='0' width='1047' height='1047' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='105' result='effect1_foregroundBlur'/%3E%3C/filter%3E%3Cfilter id='filter1_f' x='0' y='0' width='1047' height='1047' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='105' result='effect1_foregroundBlur'/%3E%3C/filter%3E%3Cfilter id='filter2_f' x='403' y='0' width='1047' height='1047' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='105' result='effect1_foregroundBlur'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
 
 		@media ($mdWidth) {
 
-			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='947' height='1350' fill='none' viewBox='0 0 947 1350'%3E%3Cg opacity='.5'%3E%3Cg filter='url(%23filter0_f)' opacity='.3'%3E%3Cellipse cx='616.7' cy='675' fill='%234478F7' rx='120' ry='465'/%3E%3C/g%3E%3Cg filter='url(%23filter1_f)' opacity='.3'%3E%3Cellipse cx='330' cy='675' fill='%231ACF99' rx='120' ry='465'/%3E%3C/g%3E%3Cg filter='url(%23filter2_f)' opacity='.3'%3E%3Cellipse cx='484.26' cy='675' fill='%23EC2565' rx='120' ry='465'/%3E%3C/g%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_f' width='660' height='1350' x='286.7' y='0' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur result='effect1_foregroundBlur' stdDeviation='105'/%3E%3C/filter%3E%3Cfilter id='filter1_f' width='660' height='1350' x='0' y='0' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur result='effect1_foregroundBlur' stdDeviation='105'/%3E%3C/filter%3E%3Cfilter id='filter2_f' width='660' height='1350' x='154.26' y='0' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur result='effect1_foregroundBlur' stdDeviation='105'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+			margin: 60px 0;
 
 		}
 
@@ -40,22 +34,6 @@
 
 		}
 
-		&::before {
-
-			margin: 120px 0 114px;
-			background-color: rgba(255, 255, 255, .1);
-			height: 1px;
-			display: block;
-			content: '';
-
-			@media ($mdWidth) {
-
-				margin: 60px 0;
-
-			}
-
-		}
-
 	}
 
 	&__list {
@@ -71,21 +49,6 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-
-		}
-
-		&--center {
-
-			justify-content: center;
-			margin: -30px -18px;
-
-			li {
-
-				margin: 30px 18px;
-				width: 200px;
-				display: block;
-
-			}
 
 		}
 
@@ -134,21 +97,6 @@
 			opacity: .8;
 
 		}
-
-	}
-
-	&__img {
-
-		height: 60px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-	}
-
-	.btn-more {
-
-		margin-top: 12px;
 
 	}
 

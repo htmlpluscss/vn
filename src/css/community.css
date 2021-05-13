@@ -23,7 +23,7 @@
 		display: flex;
 		justify-content: space-between;
 		font-weight: 500;
-		margin: 60px 20px 66px;
+		margin: 60px 20px;
 		font-size: 18px;
 		line-height: 30px;
 		color: rgba(255, 255, 255, .7);
@@ -103,6 +103,12 @@
 	}
 
 	&__desc {
+
+		.btn-more {
+
+			margin-top: 24px;
+
+		}
 
 		@media ($mdWidth) {
 

@@ -11,7 +11,10 @@
 
 @import url(first-screen.css);
 @import url(community.css);
+@import url(token.css);
 @import url(listings.css);
+@import url(spotlight.css);
+@import url(audits.css);
 @import url(funded.css);
 @import url(programm.css);
 @import url(based.css);

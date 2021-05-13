@@ -227,18 +227,21 @@
 			height: auto;
 			justify-content: flex-start;
 
+			scrollbar-width: thin;
+			scrollbar-color: var(--green) var(--bg);
+
 			&::-webkit-scrollbar {
 
 				height: 6px;
-				border-radius: 3px;
-				background-color: var(--color);
+				border-radius: 6px;
+				background-color: var(--bg);
 
 			}
 
 			&::-webkit-scrollbar-thumb {
 
-				border-radius: 3px;
-				background-color: rgba(18, 18, 18, .5);
+				border-radius: 6px;
+				background-color: var(--green);
 
 			}
 

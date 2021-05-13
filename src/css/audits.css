@@ -1,0 +1,122 @@
+.audits {
+
+	margin: 120px 0 62px;
+
+	@media ($smWidth) {
+
+		margin: 60px 0 0;
+
+	}
+
+	&__title {
+
+		font-weight: 500;
+		font-size: 36px;
+		line-height: 60px;
+		opacity: 0.8;
+		text-align: center;
+
+		@media ($mdWidth) {
+
+			font-size: 36px;
+			line-height: 48px;
+
+		}
+
+	}
+
+	&__img {
+
+		width: 911px;
+		margin: 60px auto 48px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		@media ($mdWidth) {
+
+			width: 633px;
+			margin: 48px auto;
+
+			img {
+
+				width: 633px;
+				height: 246px;
+
+			}
+
+		}
+
+		@media ($smWidth) {
+
+			width: 308px;
+			position: relative;
+			display: block;
+
+			img {
+
+				width: 308px;
+				height: 488px;
+				position: absolute;
+				top: 0;
+				left: 0;
+
+			}
+
+		}
+
+	}
+
+	.btn-more {
+
+		width: 306px;
+		margin-top: 24px;
+
+		@media ($smWidth) {
+
+			position: relative;
+			margin: 0;
+			padding-top: 198px;
+			justify-content: flex-end;
+			padding-right: 24px;
+
+			& + .btn-more {
+
+				padding-top: 286px;
+
+			}
+
+		}
+
+	}
+
+	&__texture {
+
+		position: relative;
+
+		@media ($mdWidth) {
+
+			img {
+
+				max-width: 100%;
+				height: auto;
+
+			}
+
+		}
+
+		&::after {
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			content: '';
+			background-image: linear-gradient(to bottom, rgba(18, 18, 18, 0), rgba(18, 18, 18, 1));
+
+		}
+
+	}
+
+}
