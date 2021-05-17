@@ -146,6 +146,27 @@
 
 				width: 221px;
 
+				@media ($mdWidth) {
+
+					width: 236px;
+
+					&:first-child {
+
+						border-top-right-radius: 0;
+						border-bottom-right-radius: 0;
+
+					}
+
+					&:last-child {
+
+						border-top-left-radius: 0;
+						border-bottom-left-radius: 0;
+						margin-left: 4px;
+
+					}
+
+				}
+
 			}
 
 			.btn--img {
@@ -154,12 +175,29 @@
 
 			}
 
+			&--4-btn {
+
+				@media ($mdWidth) {
+
+					flex-wrap: wrap;
+
+				}
+
+			}
+
 		}
 
 		&-group {
 
 			display: flex;
-			margin-left: 24px;
+			margin: 0 24px;
+
+			@media ($mdWidth) {
+
+				order: 3;
+				margin-top: 24px;
+
+			}
 
 			.btn {
 
