@@ -90,6 +90,13 @@
 			justify-content: center;
 			margin: 36px 0;
 
+			@media ($mdWidth) {
+
+				flex-wrap: wrap;
+				margin: 24px 0;
+
+			}
+
 			@media ($smWidth) {
 
 				margin: 20px 0;
@@ -144,28 +151,7 @@
 
 			.btn--white {
 
-				width: 221px;
-
-				@media ($mdWidth) {
-
-					width: 236px;
-
-					&:first-child {
-
-						border-top-right-radius: 0;
-						border-bottom-right-radius: 0;
-
-					}
-
-					&:last-child {
-
-						border-top-left-radius: 0;
-						border-bottom-left-radius: 0;
-						margin-left: 4px;
-
-					}
-
-				}
+				width: 232px;
 
 			}
 
@@ -175,11 +161,20 @@
 
 			}
 
-			&--4-btn {
+			&--3-btn {
+
+				margin: -12px;
+				flex-wrap: wrap;
 
 				@media ($mdWidth) {
 
-					flex-wrap: wrap;
+					margin: -12px;
+
+				}
+
+				.btn {
+
+					margin: 12px;
 
 				}
 
@@ -194,7 +189,6 @@
 
 			@media ($mdWidth) {
 
-				order: 3;
 				margin-top: 24px;
 
 			}
