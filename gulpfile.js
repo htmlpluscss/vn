@@ -184,7 +184,7 @@ gulp.task('default', gulp.series(
 	));
 
 
-gulp.task('build', function() {
+gulp.task('build', () => {
 
 	return gulp.src('src/**/index.html')
 		.pipe(nunjucksRender({
