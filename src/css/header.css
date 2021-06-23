@@ -2,7 +2,7 @@
 
 	@media ($desktop) {
 
-		padding: 18px 0 16px;
+		padding: 9px 0;
 		border-bottom: 1px solid rgba(78, 78, 78, .4);
 		position: sticky;
 		top: 0;
@@ -48,6 +48,15 @@
 			width: 200px;
 			display: flex;
 			justify-content: flex-end;
+
+			.btn {
+
+				font-size: 13px;
+				line-height: 20px;
+				padding: 16px 28px;
+				text-transform: uppercase;
+
+			}
 
 		}
 
@@ -107,9 +116,7 @@
 
 		&__right {
 
-			display: flex;
-			justify-content: center;
-			margin: 12px 0;
+			display: none;
 
 		}
 
@@ -120,30 +127,6 @@
 		&__center {
 
 			display: block;
-
-		}
-
-	}
-
-	&__try-valueswap {
-
-		display: flex;
-		align-items: center;
-		font-weight: 500;
-		font-size: 14px;
-		line-height: 20px;
-		white-space: nowrap;
-
-		&-ico {
-
-			margin-right: 12px;
-
-		}
-
-		&-arrow {
-
-			margin-left: 4px;
-			fill: var(--text);
 
 		}
 

@@ -53,39 +53,10 @@
 
 	&--medium {
 
-		padding: 16px;
+		padding: 12px;
 		font-weight: 500;
-		line-height: 18px;
-
-	}
-
-	&__inner {
-
-		display: flex;
-		align-items: center;
-
-		img {
-
-			margin-right: 10px;
-
-		}
-
-		small {
-
-			font-size: 12px;
-			opacity: 0.5;
-			display: block;
-			text-align: left;
-			font-weight: 400;
-
-		}
-
-	}
-
-	&--white {
-
-		color: var(--bg);
-		background-color: var(--color);
+		line-height: 20px;
+		font-size: 16px;
 
 	}
 
