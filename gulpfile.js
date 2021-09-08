@@ -68,16 +68,7 @@ gulp.task('html', () => {
 			},
 			path: 'src/'
 		}))
-		.pipe(w3cjs({
-			verifyMessage: (type, message) => {
-
-				// prevent logging error message
-				if(message.indexOf('Attribute “loading” not allowed on element “img” at this point.') === 0) return false;
-
-				// allow message to pass through
-				return true;
-			}
-		}))
+		.pipe(w3cjs())
 		.pipe(w3cjs.reporter())
 		.pipe(replace('css/styles.css', 'css/styles.css?' + Date.now()))
 		.pipe(replace('js/scripts.js', 'js/scripts.js?' + Date.now()))
