@@ -145,11 +145,11 @@ gulp.task('copy', () => {
 
 gulp.task('ftp', () => {
 
-	if(!config) {
+//	if(!config) {
 
 		return true;
 
-	}
+//	}
 
 	return gulp.src('build/**/*', {since: gulp.lastRun('ftp')})
 		.pipe(debug({title: 'ftp:'}))
